@@ -6,11 +6,11 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" Component={HomePage} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<>Rotta base</>} />
+        <Route path="/products" element={<>Prodotti</>} />
+        <Route path="products" element={<>Prodotti</>} />
+      </Routes>
     </>
   );
 }
