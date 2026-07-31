@@ -3,14 +3,16 @@ import './App.css'
 
 function App() {
 
+  const [state, setState] = useState(0);
 
   return (
     <>
       <Routes>
-        <Route path="/" element={<>
+        <Route path="/" element={(<>
+          <button onClick={() => setState(state => state + 1)}>Incrementa {state}</button>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/products">Prodotti</NavLink>
-        </>} />
+        </>)} />
         <Route path="/products" element={<>Prodotti</>} />
         <Route path="products" element={<>Prodotti</>} />
       </Routes>
