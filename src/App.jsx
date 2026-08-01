@@ -1,24 +1,19 @@
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
-import { useState } from 'react';
-import './App.css'
+import { Routes, Route } from 'react-router-dom';
+import './App.css';
 import { ShellLayout } from './components/ShellLayout';
-import { Home } from './Home';
+import { Home } from './pages/Home';
+import { Products } from './pages/Products';
 
 function App() {
-
-  const [state, setState] = useState(0);
-
   return (
     <Routes>
-      <Route path='/' Component={ShellLayout}>
-        <Route index Component={Home} />
-        <Route path="products" element={<>Prodotti</>} />
-      <Route path="us" element={<>Chi siamo</>} />
-
+      <Route path="/" element={<ShellLayout />}>
+        <Route index element={<Home />} />
+        <Route path="products" element={<Products />} />
+        <Route path="us" element={<>Chi siamo</>} />
       </Route>
-
     </Routes>
   );
 }
 
-export default App
+export default App;

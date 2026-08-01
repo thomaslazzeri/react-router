@@ -5,7 +5,9 @@ import { Header } from './Header';
 export const ShellLayout = () => (
     <div className="shell-layout">
         <Header />
-        <Outlet />
+        <div className="page">
+            <Outlet />
+        </div>
         <Footer />
     </div>
 );

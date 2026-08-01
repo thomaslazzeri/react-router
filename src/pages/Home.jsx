@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Home = () => {
     const [count, setCount] = useState(0);
 
+    useEffect(() => {
+        console.log('Enter Home page');
+        return () => {
+            console.log('Exit Home page');
+        };
+    }, []);
+
     return (
-        <div className="home page">
+        <div className="home">
             <h1>Home page</h1>
             <p>Counter: {count}</p>
             <button onClick={() => setCount(count => count + 1)}>Incrementa {count}</button>
