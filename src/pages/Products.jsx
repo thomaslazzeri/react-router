@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import './Products.css';
 
 const API_URL = 'https://fakestoreapi.com/products';
 

@@ -1,0 +1,12 @@
+Footer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-top: 1px solid black;
+}
+
+.copyright {
+    display: inline-block;
+    margin-top: 10px;
+    padding-right: 7px;
+}

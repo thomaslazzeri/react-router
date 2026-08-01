@@ -1,5 +1,6 @@
-#root {
-    min-height: 100dvh;
+.shell-layout {
+    height: 100dvh;
+    overflow: hidden;
     display: grid;
     grid-template-rows: auto 1fr auto;
 }

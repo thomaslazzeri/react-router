@@ -1,5 +1,8 @@
+import './Us.css';
+
 export const Us = () => (
-    <div className="Us">
-        <p>Chi siamo noi</p>
+    <div className="us">
+        <p>Chi siamo noi...</p>
+        <p>Una famiglia di programmatori😃</p>
     </div>
 );

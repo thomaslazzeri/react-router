@@ -19,3 +19,7 @@ a.active {
     color: #0000ff;
 }
 
+.page {
+    padding: 1rem;
+    overflow: auto;
+}
