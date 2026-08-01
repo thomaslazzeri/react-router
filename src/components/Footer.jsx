@@ -1,5 +1,5 @@
 export const Footer = () => (
     <footer>
-        Copyright 2026 - Made with Love
+        <div className="copyright">Copyright 2026 - Made with Love</div>
     </footer>
 );
