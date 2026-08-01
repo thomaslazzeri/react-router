@@ -3,6 +3,7 @@ import './App.css';
 import { ShellLayout } from './components/ShellLayout';
 import { Home } from './pages/Home';
 import { Products } from './pages/Products';
+import { Us } from './pages/Us';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Route path="/" element={<ShellLayout />}>
         <Route index element={<Home />} />
         <Route path="products" element={<Products />} />
-        <Route path="us" element={<>Chi siamo</>} />
+        <Route path="us" element={<Us />} />
       </Route>
     </Routes>
   );
