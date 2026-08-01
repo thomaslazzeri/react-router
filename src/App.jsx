@@ -7,14 +7,6 @@ function App() {
   const [state, setState] = useState(0);
 
   return (
-    <>
-      <header>
-        <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/products">Prodotti</NavLink>
-          <NavLink to="/us">Chi siamo</NavLink>
-        </nav>
-      </header>
       <Routes>
         <Route path="/" element={(
           <>
@@ -23,7 +15,6 @@ function App() {
         <Route path="products" element={<>Prodotti</>} />
         <Route path="us" element={<>Chi siamo</>} />
       </Routes>
-    </>
   );
 }
 
