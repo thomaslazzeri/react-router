@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import './App.css'
 import { ShellLayout } from './components/ShellLayout';
+import { Home } from './Home';
 
 function App() {
 
@@ -10,15 +11,12 @@ function App() {
   return (
     <Routes>
       <Route path='/' Component={ShellLayout}>
-        <Route index element={(
-          <>
-            <button onClick={() => setState(state => state + 1)}>Incrementa {state}</button>
-          </>)} />
+        <Route index Component={Home} />
         <Route path="products" element={<>Prodotti</>} />
+      <Route path="us" element={<>Chi siamo</>} />
 
       </Route>
 
-      <Route path="us" element={<>Chi siamo</>} />
     </Routes>
   );
 }
