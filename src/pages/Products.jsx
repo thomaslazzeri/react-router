@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Products.css';
+import { Link } from 'react-router-dom';
 
 const API_URL = 'https://fakestoreapi.com/products';
 
@@ -32,9 +33,10 @@ export const Products = () => {
                         <img src={item.image} alt={item.title} />
                         <h3>{item.title}</h3>
                         <p>€{item.price}</p>
+                        <Link to={`/products/${item.id}`} className="btn-details">Vedi dettaglio</Link>
                     </div>
                 ))}
             </div>
-        </div>
+        </div >
     );
 };
