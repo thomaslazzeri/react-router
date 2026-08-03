@@ -29,7 +29,7 @@ export const Details = () => {
     if (!product) {
         return (
             <div className="error-details">
-                <h2>NON HA FUNZIONATO</h2>
+                <h2>Qualcosa è andato storto...</h2>
             </div>
         );
     };
