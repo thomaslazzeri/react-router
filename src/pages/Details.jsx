@@ -17,7 +17,8 @@ export const Details = () => {
             });
     }, [id]);
 
-    if (!product) return <h2>NON HA FUNZIONATO</h2>;
+    if (!product) return
+    console.error("NON HA FUNZIONATO:", error);
 
     return (
         <div className="details-page">
