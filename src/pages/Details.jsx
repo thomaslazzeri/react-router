@@ -23,7 +23,9 @@ export const Details = () => {
     }, [id]);
 
     if (loading) {
-        return <div className="loading-details">Sto caricando...</div>;
+        return (
+            <div className="loading-details">Sto caricando...</div>
+        );
     };
 
     if (!product) {
