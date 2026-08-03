@@ -4,7 +4,7 @@ import { ShellLayout } from './components/ShellLayout';
 import { Home } from './pages/Home';
 import { Products } from './pages/Products';
 import { Us } from './pages/Us';
-import { Details } from './components/Details';
+import { Details } from './pages/Details';
 
 function App() {
   return (
