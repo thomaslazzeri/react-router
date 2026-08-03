@@ -17,7 +17,7 @@ export const Details = () => {
             });
     }, [id]);
 
-    if (!product) return null;
+    if (!product) return <h2>NON HA FUNZIONATO</h2>;
 
     return (
         <div className="details-page">
