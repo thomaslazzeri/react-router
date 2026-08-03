@@ -17,8 +17,12 @@ export const Details = () => {
             });
     }, [id]);
 
-    if (!product) return
-    console.error("NON HA FUNZIONATO:", error);
+    if (!product) return (
+        <div className="ErrorDetails">
+            <h2>NON HA FUNZIONATO</h2>
+        </div>
+    );
+
 
     return (
         <div className="details-page">
@@ -30,5 +34,5 @@ export const Details = () => {
                 <h3>€{product.price}</h3>
             </div>
         </div>
-    )
-}
+    );
+};
