@@ -6,23 +6,33 @@ import { useParams } from 'react-router-dom';
 export const Details = () => {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
         axios.get(`https://fakestoreapi.com/products/${id}`)
             .then(response => {
                 setProduct(response.data);
             })
             .catch(error => {
                 console.error("Errore nel recuperare il dettaglio:", error);
+            })
+            .finally(() => {
+                setLoading(false);
             });
     }, [id]);
 
-    if (!product) return (
-        <div className="ErrorDetails">
-            <h2>NON HA FUNZIONATO</h2>
-        </div>
-    );
+    if (loading) {
+        return <div className="loading-details">Sto caricando...</div>;
+    };
 
+    if (!product) {
+        return (
+            <div className="error-details">
+                <h2>NON HA FUNZIONATO</h2>
+            </div>
+        );
+    };
 
     return (
         <div className="details-page">
