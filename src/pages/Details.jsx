@@ -56,6 +56,11 @@ export const Details = () => {
 
     return (
         <div className="details-page">
+            <button type="button"
+                onClick={handleBackToList}
+                className="btn-back">
+                ← Torna ai Prodotti
+            </button>
             <div className="product-detail">
                 <img src={product.image} alt={product.title} />
                 <h2>{product.title}</h2>
