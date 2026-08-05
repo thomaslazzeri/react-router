@@ -1,10 +1,11 @@
 import axios from 'axios';
 import './Details.css';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 export const Details = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(false);
 
@@ -12,15 +13,36 @@ export const Details = () => {
         setLoading(true);
         axios.get(`https://fakestoreapi.com/products/${id}`)
             .then(response => {
-                setProduct(response.data);
+                if (!response.data) {
+                    navigate('/products', { replace: true });
+                } else {
+                    setProduct(response.data);
+                }
             })
             .catch(error => {
                 console.error("Errore nel recuperare il dettaglio:", error);
+                navigate('/products', { replace: true });
             })
             .finally(() => {
                 setLoading(false);
             });
-    }, [id]);
+    }, [id, navigate]);
+
+    const productId = Number(id);
+
+    const handlePrev = () => {
+        if (productId > 1) {
+            navigate(`/products/${productId - 1}`);
+        };
+    };
+
+    const handleNext = () => {
+        navigate(`/products/${productId + 1}`);
+    };
+
+    const handleBackToList = () => {
+        navigate('/products');
+    };
 
     if (loading) {
         return (
@@ -29,11 +51,7 @@ export const Details = () => {
     };
 
     if (!product) {
-        return (
-            <div className="error-details">
-                <h2>Qualcosa è andato storto...</h2>
-            </div>
-        );
+        return null;
     };
 
     return (
@@ -44,6 +62,20 @@ export const Details = () => {
                 <p className="category">{product.category}</p>
                 <p className="description">{product.description}</p>
                 <h3>€{product.price}</h3>
+            </div>
+
+            <div className="navigation-buttons">
+                <button type="button"
+                    onClick={handlePrev}
+                    disabled={productId <= 1}
+                >
+                    &laquo; Prodotto Precedente
+                </button>
+                <button type="button"
+                    onClick={handleNext}
+                >
+                    Prodotto Successivo &raquo;
+                </button>
             </div>
         </div>
     );

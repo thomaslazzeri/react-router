@@ -5,7 +5,7 @@ import { Home } from './pages/Home';
 import { Products } from './pages/Products';
 import { Us } from './pages/Us';
 import { Details } from './pages/Details';
-import { ErrorFound } from '/pages/ErrorFound';
+import { ErrorFound } from './pages/ErrorFound';
 
 function App() {
   return (
