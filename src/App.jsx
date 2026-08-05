@@ -5,6 +5,7 @@ import { Home } from './pages/Home';
 import { Products } from './pages/Products';
 import { Us } from './pages/Us';
 import { Details } from './pages/Details';
+import { ErrorFound } from '/pages/ErrorFound';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="products" element={<Products />} />
         <Route path="us" element={<Us />} />
         <Route path="products/:id" element={<Details />} />
+        <Route path="*" element={<ErrorFound />} />
       </Route>
     </Routes>
   );
