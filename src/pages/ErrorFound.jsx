@@ -1,4 +1,4 @@
-import './404.css';
+import './ErrorFound.css';
 
 export const ErrorFound = () => (
     <div className="error">
